@@ -2,8 +2,9 @@ import discord
 from discord.ext import commands
 import random
 import difflib
-from nba_api.stats.static import players as nba_players, teams as nba_teams
-from nba_api.stats.endpoints import commonteamroster, commonplayerinfo
+import time
+import os
+
 import nba_api.library.http as nba_http
 nba_http.NBAHTTP.headers = {
     'Host': 'stats.nba.com',
@@ -17,9 +18,8 @@ nba_http.NBAHTTP.headers = {
     'Connection': 'keep-alive',
 }
 
-import time
-import os
-
+from nba_api.stats.static import players as nba_players, teams as nba_teams
+from nba_api.stats.endpoints import commonteamroster, commonplayerinfo
 # ── Config ────────────────────────────────────────────────────────────────────
 TOKEN = os.getenv("DISCORD_TOKEN")
 PREFIX = "-"
