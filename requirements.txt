@@ -1,0 +1,3 @@
+discord.py
+nba_api
+pandas
